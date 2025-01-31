@@ -32,7 +32,7 @@ export async function POST(request: Request) {
     await resend.emails.send({
       from: 'Physioshark Contact Form <hello@physioshark.org>',
       to: ['hello@physioshark.org'],
-      reply_to: email,
+      replyTo: email,
       subject: `[Website Contact] ${subject}`,
       html: `
         <h2>New Contact Form Submission</h2>
