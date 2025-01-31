@@ -29,19 +29,6 @@ export default function Publications() {
             altmetric: "38"
           }
         },
-        {
-          title: "Validation of a portable, waterproof blood pH analyzer for elasmobranchs",
-          authors: "Talwar, B., Bouyoucos, I.A., Shipley, O., Rummer, J.L., Mandelman, J.W., Brooks, E.J., Grubbs, R.D.",
-          year: 2017,
-          journal: "Conservation Physiology",
-          volume: "5 (1): cox012",
-          doi: "https://doi.org/10.1093/conphys/cox012",
-          metrics: {
-            if: "3.634",
-            citations: "n/a",
-            altmetric: "n/a"
-          }
-        }
       ]
     },
     {
@@ -71,6 +58,19 @@ export default function Publications() {
             if: "3.299",
             citations: "1",
             altmetric: "29"
+          }
+        },
+        {
+          title: "Validation of a portable, waterproof blood pH analyzer for elasmobranchs",
+          authors: "Talwar, B., Bouyoucos, I.A., Shipley, O., Rummer, J.L., Mandelman, J.W., Brooks, E.J., Grubbs, R.D.",
+          year: 2017,
+          journal: "Conservation Physiology",
+          volume: "5 (1): cox012",
+          doi: "https://doi.org/10.1093/conphys/cox012",
+          metrics: {
+            if: "3.634",
+            citations: "1",
+            altmetric: "9"
           }
         }
       ]
@@ -120,6 +120,81 @@ export default function Publications() {
             if: "1.104",
             citations: "1",
             altmetric: "50"
+          }
+        }
+      ]
+    },
+    {
+      category: "Healing rates in blacktip reef sharks",
+      papers: [
+        {
+          title: "Blacktip reef sharks (Carcharhinus melanopterus) show high capacity for wound healing and recovery following injury",
+          authors: "Chin, A., Mourier, J., Rummer, J.L.",
+          year: 2015,
+          journal: "Conservation Physiology",
+          volume: "3 (1):cov062",
+          doi: "https://doi.org/10.1093/conphys/cov062",
+          metrics: {
+            if: "3.634",
+            citations: "10",
+            altmetric: "96"
+          }
+        }
+      ]
+    },
+    {
+      category: "Epaulette and bamboo sharks under simulated ocean acidification conditions",
+      papers: [
+        {
+          title: "Absence of cellular damage in tropical newly-hatched sharks (Chiloscyllium plagiosum) under ocean acidification conditions",
+          authors: "Lopes, A.R., Sampaio, E., Santos, C., Couto, A., Pegado, M.R. Diniz, M., Munday, P.L., Rummer, J.L., Rosa, R.",
+          year: 2018,
+          journal: "Cell Stress & Chaperones",
+          volume: "23(5):837-846",
+          doi: "https://doi.org/10.1007/s12192-018-0892-3",
+          metrics: {
+            if: "2.411",
+            citations: "n/a",
+            altmetric: "6"
+          }
+        },
+        {
+          title: "Will ocean acidification affect the early ontogeny of a tropical oviparous elasmobranch (Hemiscyllium ocellatum)?",
+          authors: "Johnson, M.S., Kraver, D.W., Renshaw, G.M.C., Rummer, J.L.",
+          year: 2016,
+          journal: "Conservation Physiology",
+          volume: "4 (1):cow003",
+          doi: "https://doi.org/10.1093/conphys/cow003",
+          metrics: {
+            if: "3.634",
+            citations: "3",
+            altmetric: "93"
+          }
+        },
+        {
+          title: "Foraging behaviour of the epaulette shark Hemiscyllium ocellatum is not affected by ocean acidification",
+          authors: "Heinrich, D.D.U., Watson, S-A., Rummer, J.L., Brandl, S.J., Simpfendorfer, C.A., Heupel, M.R., Munday, P.L.",
+          year: 2015,
+          journal: "ICES Journal of Marine Science",
+          volume: "(published online 8 May 2015)",
+          doi: "https://doi.org/10.1093/icesjms/fsv085",
+          metrics: {
+            if: "2.377",
+            citations: "14",
+            altmetric: "40"
+          }
+        },
+        {
+          title: "A product of its environment: The epaulette shark (Hemiscyllium ocellatum) exhibits physiological tolerance to elevated environmental CO­2",
+          authors: "Heinrich, D.D.U., Rummer, J.L., Morash, A.J., Watson, S-A., Simpfendorfer, C.A, Heupel, M.R., Munday, P.L.",
+          year: 2014,
+          journal: "Conservation Physiology",
+          volume: "2, cou047",
+          doi: "https://doi.org/10.1093/conphys/cou047",
+          metrics: {
+            if: "3.634",
+            citations: "16",
+            altmetric: "80"
           }
         }
       ]
