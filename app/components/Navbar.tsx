@@ -3,10 +3,10 @@ import Link from 'next/link'
 
 export default function Navbar() {
   const navLinks = [
-    { href: '/', label: 'Home' },
-    { href: '#research', label: 'Research' },
-    { href: '#publications', label: 'Publications' },
-    { href: '#team', label: 'Team' },
+    { href: '#team', label: 'Our Team' },
+    { href: '#our-mission', label: 'Our Mission' },
+    { href: '#publications', label: 'Our Publications' },
+    { href: '#projects', label: 'Our Projects' },
     { href: '#contact', label: 'Contact' }
   ]
 
@@ -15,7 +15,7 @@ export default function Navbar() {
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-24">
           {/* Logo */}
-          <Link href="/" className="relative h-20 w-56">
+          <Link href="/" className="relative h-16 w-80">
             <Image
               src="/images/logo-physioshark-project.png"
               alt="Physioshark Project Logo"
