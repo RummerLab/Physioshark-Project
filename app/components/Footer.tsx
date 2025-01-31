@@ -22,7 +22,16 @@ export default function Footer() {
               <h3 className="text-xl font-bold mb-4 text-white hover:text-gray-200 transition-colors">Contact</h3>
             </a>
             <ul className="space-y-2 text-gray-400">
-              <li>James Cook University</li>
+              <li>
+                <a 
+                  href="https://www.jcu.edu.au" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="hover:text-white transition-colors"
+                >
+                  James Cook University
+                </a>
+              </li>
               <li>Townsville, QLD</li>
               <li>Australia</li>
               <li className="pt-2">
