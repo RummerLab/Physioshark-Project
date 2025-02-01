@@ -75,10 +75,9 @@ export default function Partners() {
           </p>
         </div>
 
-        <div className="max-w-7xl mx-auto space-y-8">
-          {/* First row - 5 columns */}
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8">
-            {partners.slice(0, 5).map((partner, index) => (
+        <div className="max-w-7xl mx-auto">
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
+            {partners.map((partner, index) => (
               <a
                 key={index}
                 href={partner.website}
@@ -92,30 +91,7 @@ export default function Partners() {
                     alt={partner.alt}
                     fill
                     className="object-contain"
-                    sizes="(max-width: 768px) 50vw, (max-width: 1200px) 33vw, 20vw"
-                  />
-                </div>
-              </a>
-            ))}
-          </div>
-
-          {/* Second row - 4 columns */}
-          <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {partners.slice(5).map((partner, index) => (
-              <a
-                key={index + 5}
-                href={partner.website}
-                target="_blank"
-                rel="noopener"
-                className="flex items-center justify-center p-8 bg-white rounded-lg shadow-lg hover:shadow-xl transition-shadow"
-              >
-                <div className="relative w-full h-24">
-                  <Image
-                    src={partner.logo}
-                    alt={partner.alt}
-                    fill
-                    className="object-contain"
-                    sizes="(max-width: 768px) 50vw, (max-width: 1200px) 50vw, 25vw"
+                    sizes="(max-width: 768px) 50vw, (max-width: 1200px) 33vw, 25vw"
                   />
                 </div>
               </a>

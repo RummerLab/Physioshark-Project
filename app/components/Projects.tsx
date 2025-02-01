@@ -67,14 +67,15 @@ If you have any questions about our project or how you can support us in our res
                 key={index}
                 className={`flex flex-col ${project.position === 'right' ? 'md:flex-row-reverse' : 'md:flex-row'} gap-8 items-center`}
               >
-                <div className="flex-1">
-                  <div className="relative h-[400px] rounded-lg overflow-hidden shadow-lg">
+                <div className="flex-1 w-full">
+                  <div className="relative w-full aspect-[4/3] rounded-lg overflow-hidden shadow-lg">
                     <Image
                       src={project.image}
                       alt={project.alt}
                       fill
                       className="object-cover"
-                      sizes="(max-width: 768px) 100vw, 50vw"
+                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                      priority={index === 0}
                     />
                   </div>
                 </div>
