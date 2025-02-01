@@ -70,7 +70,7 @@ Dr Allan's field sites span both tropical, temperate and polar regions.`,
       role: "Research collaborator",
       description: `Ian completed his Ph.D. as a co-tutelle at the Australian Research Council Centre of Excellence for Coral Reef Studies (James Cook University) and the Centre de Recherches Insulaires et Observatoire de l'Environnement (École Pratique des Hautes Études). He investigated the ecophysiology of global change for tropical sharks by testing hypotheses predicting species' vulnerability to global change phenomena, including ocean warming, acidification, and deoxygenation.
 
-Ian has been involved in shark research since 2008. For his research, Ian utilises a range of techniques belonging to the "Conservation Physiology Toolbox." including respirometry and bio-logging. Before joining Physioshark in 2016, Ian's previous research focused on understanding the energetic costs, physiological stress, and behavioural responses of sharks to longline capture, including the implementation of bycatch devices. To learn more about Ian's research, <a href="https://ianbouyoucos.com/" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800">visit his website</a>.`,
+Ian has been involved in shark research since 2008. For his research, Ian utilises a range of techniques belonging to the "Conservation Physiology Toolbox." including respirometry and bio-logging. Before joining Physioshark in 2016, Ian's previous research focused on understanding the energetic costs, physiological stress, and behavioural responses of sharks to longline capture, including the implementation of bycatch devices. To learn more about Ian's research, <a href="https://ianbouyoucos.com/" target="_blank" rel="noopener" class="text-blue-600 hover:text-blue-800">visit his website</a>.`,
       image: "/images/team-dr-ian-bouyoucos-profile.jpg",
       alt: "Dr. Ian Bouyoucos, Research Collaborator"
     },
@@ -97,7 +97,7 @@ Carolyn spent the first half of her PhD working with the Anderson Cabot Center f
       role: "Research collaborator",
       description: `Ornella is a Swiss marine biologist that has been studying shark ecology for the past eleven years. She is particularly interested in the behavioural and trophic ecology of sharks, as well as the conservation of coastal juvenile shark populations. Ornella is experienced in using various non-invasive methods such as stable isotope analyses, DNA barcoding, catch and release practices, and underwater observations. 
 
-Ornella first got involved into marine science during her internship at the renowned <a href="https://www.biminisharklab.com/" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800">Bimini Biological Field Station</a> (BBFS) in 2009. Fascinated by this experience, she returned to the station in early 2011 to investigate the diet of juvenile lemon sharks for her Master thesis. Following multiple jobs as a research assistant in the US, Seychelles, and French Polynesia, Ornella started her PhD at the French University EPHE in collaboration with the <a href="https://saveourseas.com/sosf-darros-research-centre/" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800">Save Our Seas Foundation - D'Arros</a> Research Centre (SOSF - DRC), the <a href="http://www.criobe.pf/" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800">CRIOBE</a> and the Physioshark research programme. As part of her PhD, Ornella investigated the coexistence of two juvenile reef shark species and the possible effects of competition on the species' ecological niches. After obtaining her Ph.D. in summer 2020, Ornella continues to investigate sharks' trophic ecology, as well as anthropogenic impacts on the ecology and physiology of sharks. In addition, Ornella raises awareness of sharks by sharing her knowledge through public presentations, media engagements, as a scientific expedition leader for the Sail and Explore Association, and as a mentor and consultant for undergrad students. To learn more about Ornella's versatile work, <a href="https://www.ornellaweideli.com" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800">visit her website</a>.`,
+Ornella first got involved into marine science during her internship at the renowned <a href="https://www.biminisharklab.com/" target="_blank" rel="noopener" class="text-blue-600 hover:text-blue-800">Bimini Biological Field Station</a> (BBFS) in 2009. Fascinated by this experience, she returned to the station in early 2011 to investigate the diet of juvenile lemon sharks for her Master thesis. Following multiple jobs as a research assistant in the US, Seychelles, and French Polynesia, Ornella started her PhD at the French University EPHE in collaboration with the <a href="https://saveourseas.com/sosf-darros-research-centre/" target="_blank" rel="noopener" class="text-blue-600 hover:text-blue-800">Save Our Seas Foundation - D'Arros</a> Research Centre (SOSF - DRC), the <a href="http://www.criobe.pf/" target="_blank" rel="noopener" class="text-blue-600 hover:text-blue-800">CRIOBE</a> and the Physioshark research programme. As part of her PhD, Ornella investigated the coexistence of two juvenile reef shark species and the possible effects of competition on the species' ecological niches. After obtaining her Ph.D. in summer 2020, Ornella continues to investigate sharks' trophic ecology, as well as anthropogenic impacts on the ecology and physiology of sharks. In addition, Ornella raises awareness of sharks by sharing her knowledge through public presentations, media engagements, as a scientific expedition leader for the Sail and Explore Association, and as a mentor and consultant for undergrad students. To learn more about Ornella's versatile work, <a href="https://www.ornellaweideli.com" target="_blank" rel="noopener" class="text-blue-600 hover:text-blue-800">visit her website</a>.`,
       image: "/images/team-dr-ornella-weideli-profile.jpg",
       alt: "Dr. Ornella Weideli, Research Collaborator"
     },
@@ -176,7 +176,7 @@ She uses an interdisciplinary approach to study shark / climate / human interact
                         <a 
                           href={`https://${member.links.website}`}
                           target="_blank"
-                          rel="noopener noreferrer"
+                          rel="noopener"
                           className="text-blue-600 hover:text-blue-800"
                         >
                           Website
@@ -186,7 +186,7 @@ She uses an interdisciplinary approach to study shark / climate / human interact
                         <a 
                           href={`https://${member.links.lab}`}
                           target="_blank"
-                          rel="noopener noreferrer"
+                          rel="noopener"
                           className="text-blue-600 hover:text-blue-800"
                         >
                           Lab Website
@@ -225,7 +225,7 @@ She uses an interdisciplinary approach to study shark / climate / human interact
                         <a 
                           href={`https://${member.links.website}`}
                           target="_blank"
-                          rel="noopener noreferrer"
+                          rel="noopener"
                           className="text-blue-600 hover:text-blue-800"
                         >
                           Website
@@ -235,7 +235,7 @@ She uses an interdisciplinary approach to study shark / climate / human interact
                         <a 
                           href={`https://${member.links.lab}`}
                           target="_blank"
-                          rel="noopener noreferrer"
+                          rel="noopener"
                           className="text-blue-600 hover:text-blue-800"
                         >
                           Lab Website

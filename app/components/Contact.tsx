@@ -211,7 +211,7 @@ export default function Contact() {
                   <a 
                     href="https://www.instagram.com/physioshark/"
                     target="_blank"
-                    rel="noopener noreferrer"
+                    rel="noopener"
                     className="text-blue-600 hover:text-blue-800"
                   >
                     @physioshark
@@ -219,7 +219,7 @@ export default function Contact() {
                   <a 
                     href="https://www.instagram.com/rummerlab/"
                     target="_blank"
-                    rel="noopener noreferrer"
+                    rel="noopener"
                     className="text-blue-600 hover:text-blue-800"
                   >
                     @rummerlab

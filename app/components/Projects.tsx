@@ -105,7 +105,7 @@ If you have any questions about our project or how you can support us in our res
                 <a 
                   href="https://www.jcu.edu.au/give/give-to-innovation-and-discovery/baby-sharks-in-a-changing-world" 
                   target="_blank" 
-                  rel="noopener noreferrer"
+                  rel="noopener"
                   className="text-blue-600 hover:text-blue-800"
                 >
                   a page for non-U.S. donors
@@ -114,7 +114,7 @@ If you have any questions about our project or how you can support us in our res
                 <a 
                   href="https://jcuamerica.org/home/jcu-physioshark-research-program" 
                   target="_blank" 
-                  rel="noopener noreferrer"
+                  rel="noopener"
                   className="text-blue-600 hover:text-blue-800"
                 >
                   a page for U.S. donors

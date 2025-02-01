@@ -26,7 +26,7 @@ export default function Footer() {
                 <a 
                   href="https://www.jcu.edu.au" 
                   target="_blank" 
-                  rel="noopener noreferrer"
+                  rel="noopener"
                   className="hover:text-white transition-colors"
                 >
                   James Cook University

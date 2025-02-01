@@ -83,7 +83,7 @@ export default function Partners() {
                 key={index}
                 href={partner.website}
                 target="_blank"
-                rel="noopener noreferrer" 
+                rel="noopener" 
                 className="flex items-center justify-center p-8 bg-white rounded-lg shadow-lg hover:shadow-xl transition-shadow"
               >
                 <div className="relative w-full h-24">
@@ -106,7 +106,7 @@ export default function Partners() {
                 key={index + 5}
                 href={partner.website}
                 target="_blank"
-                rel="noopener noreferrer"
+                rel="noopener"
                 className="flex items-center justify-center p-8 bg-white rounded-lg shadow-lg hover:shadow-xl transition-shadow"
               >
                 <div className="relative w-full h-24">

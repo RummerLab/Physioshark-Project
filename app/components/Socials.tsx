@@ -58,7 +58,7 @@ export default function Socials() {
             <a
               href="https://www.instagram.com/physioshark/"
               target="_blank"
-              rel="noopener noreferrer"
+              rel="noopener"
               className="hover:text-blue-400 transition-colors duration-200"
             >
               @physioshark
@@ -67,7 +67,7 @@ export default function Socials() {
             <a
               href="https://www.instagram.com/rummerlab/"
               target="_blank"
-              rel="noopener noreferrer"
+              rel="noopener"
               className="hover:text-blue-400 transition-colors duration-200"
             >
               @rummerlab
@@ -82,7 +82,7 @@ export default function Socials() {
                 key={social.name}
                 href={social.url}
                 target="_blank"
-                rel="noopener noreferrer"
+                rel="noopener"
                 className="text-white hover:text-blue-400 transition-colors duration-200"
                 aria-label={`Follow us on ${social.name}`}
               >
