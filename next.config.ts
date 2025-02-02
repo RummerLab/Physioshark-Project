@@ -7,8 +7,19 @@ const config: NextConfig = {
     ignoreDuringBuilds: true,
   },
   images: {
-    domains: ['rummerlab.com'],
-  },
+    remotePatterns: [
+        {
+            protocol: 'https',
+            hostname: 'rummerlab.com',
+            pathname: '/images/**',
+        },
+        {
+            protocol: 'https',
+            hostname: 'jodierummer.com',
+            pathname: '/images/**',
+        },
+    ],
+},
 };
 
 export default config;
