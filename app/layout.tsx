@@ -4,6 +4,7 @@ import "./globals.css";
 import { siteMetadata } from './metadata'
 import { Analytics } from '@vercel/analytics/react';
 import { SpeedInsights } from '@vercel/speed-insights/next';
+import GoogleAnalytics from './components/GoogleAnalytics';
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -116,6 +117,7 @@ export default function RootLayout({
         {children}
         <Analytics />
         <SpeedInsights />
+        <GoogleAnalytics GA_MEASUREMENT_ID="G-VZF5DR37YH" />
       </body>
     </html>
   );
