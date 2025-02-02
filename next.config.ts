@@ -6,6 +6,9 @@ const config: NextConfig = {
     // your project has ESLint errors.
     ignoreDuringBuilds: true,
   },
+  images: {
+    domains: ['rummerlab.com'],
+  },
 };
 
 export default config;
