@@ -51,7 +51,7 @@ function TeamMemberLinks({ links }: { links: TeamMember['links'] }) {
     <div className="mt-4 flex flex-wrap gap-4">
       {links.personalWebsite && (
         <a 
-          href={`https://${links.personalWebsite}`}
+          href={links.personalWebsite.startsWith('http') ? links.personalWebsite : `https://${links.personalWebsite}`}
           target="_blank"
           rel="noopener noreferrer"
           className="text-blue-600 hover:text-blue-800"
@@ -61,7 +61,7 @@ function TeamMemberLinks({ links }: { links: TeamMember['links'] }) {
       )}
       {links.labWebsite && (
         <a 
-          href={`https://${links.labWebsite}`}
+          href={links.labWebsite.startsWith('http') ? links.labWebsite : `https://${links.labWebsite}`}
           target="_blank"
           rel="noopener noreferrer"
           className="text-blue-600 hover:text-blue-800"
@@ -69,9 +69,9 @@ function TeamMemberLinks({ links }: { links: TeamMember['links'] }) {
           Lab Website
         </a>
       )}
-      {links.projectWebsite && (
+      {links.projectWebsite && links.projectWebsite !== "physioshark.org" && (
         <a 
-          href={`https://${links.projectWebsite}`}
+          href={links.projectWebsite.startsWith('http') ? links.projectWebsite : `https://${links.projectWebsite}`}
           target="_blank"
           rel="noopener noreferrer"
           className="text-blue-600 hover:text-blue-800"
@@ -80,23 +80,34 @@ function TeamMemberLinks({ links }: { links: TeamMember['links'] }) {
         </a>
       )}
       {/* Social Media Links */}
-      {Object.entries({
-        x: links.x,
-        bluesky: links.bluesky,
-        facebook: links.facebook,
-        instagram: links.instagram,
-        linkedin: links.linkedin,
-        github: links.github,
-      }).map(([platform, url]) => 
-        url ? (
+      {links.bluesky && (
+        <a 
+          href={links.bluesky.startsWith('http') ? links.bluesky : `https://bsky.app/profile/${links.bluesky.replace('@', '')}`}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-blue-600 hover:text-blue-800 capitalize"
+        >
+          Bluesky
+        </a>
+      )}
+      {/* Other social media links */}
+      {[
+        { key: 'facebook', prefix: 'https://www.facebook.com/' },
+        { key: 'instagram', prefix: 'https://www.instagram.com/' },
+        { key: 'linkedin', prefix: 'https://www.linkedin.com/in/' },
+        { key: 'github', prefix: 'https://github.com/' }
+      ].map(({ key, prefix }) => 
+        links[key as keyof typeof links] ? (
           <a
-            key={platform}
-            href={url}
+            key={key}
+            href={links[key as keyof typeof links]!.startsWith('http') 
+              ? links[key as keyof typeof links]! 
+              : `${prefix}${links[key as keyof typeof links]}`}
             target="_blank"
             rel="noopener noreferrer"
             className="text-blue-600 hover:text-blue-800 capitalize"
           >
-            {platform}
+            {key}
           </a>
         ) : null
       )}

@@ -194,7 +194,17 @@ export default function Contact() {
             <div className="space-y-6">
               <div>
                 <h4 className="font-medium text-gray-900 mb-2">Location</h4>
-                <p className="text-gray-600">James Cook University, Townsville, QLD, Australia</p>
+                <p className="text-gray-600">
+                  <a 
+                    href="https://www.jcu.edu.au"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-blue-600 hover:text-blue-800"
+                  >
+                    James Cook University
+                  </a>
+                  , Townsville, QLD, Australia
+                </p>
               </div>
               <div>
                 <h4 className="font-medium text-gray-900 mb-2">Email</h4>
