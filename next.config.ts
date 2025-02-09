@@ -22,6 +22,11 @@ const config: NextConfig = {
   },
   redirects: async () => [
       {
+          source: '/home',
+          destination: '/',
+          permanent: true,
+      },
+      {
           source: '/projects',
           destination: '/#projects',
           permanent: true,
