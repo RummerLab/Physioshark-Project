@@ -1,7 +1,12 @@
+'use client'
+
 import Image from 'next/image'
 import Link from 'next/link'
+import { useState } from 'react'
 
 export default function Navbar() {
+  const [isMenuOpen, setIsMenuOpen] = useState(false)
+
   const navLinks = [
     { href: '#team', label: 'Our Team' },
     { href: '#our-mission', label: 'Our Mission' },
@@ -9,6 +14,14 @@ export default function Navbar() {
     { href: '#projects', label: 'Our Projects' },
     { href: '#contact', label: 'Contact' }
   ]
+
+  const handleMenuClick = () => {
+    setIsMenuOpen(!isMenuOpen)
+  }
+
+  const handleLinkClick = () => {
+    setIsMenuOpen(false)
+  }
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm shadow-sm">
@@ -25,7 +38,7 @@ export default function Navbar() {
             />
           </Link>
 
-          {/* Navigation Links */}
+          {/* Desktop Navigation Links */}
           <div className="hidden md:flex items-center space-x-8">
             {navLinks.map((link) => (
               <Link
@@ -39,7 +52,12 @@ export default function Navbar() {
           </div>
 
           {/* Mobile Menu Button */}
-          <button className="md:hidden p-2 text-gray-700 hover:text-blue-600">
+          <button 
+            onClick={handleMenuClick}
+            className="md:hidden p-2 text-gray-700 hover:text-blue-600 transition-colors"
+            aria-expanded={isMenuOpen}
+            aria-label="Toggle navigation menu"
+          >
             <svg
               className="w-6 h-6"
               fill="none"
@@ -54,6 +72,24 @@ export default function Navbar() {
               />
             </svg>
           </button>
+        </div>
+
+        {/* Mobile Menu */}
+        <div 
+          className={`md:hidden ${isMenuOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'} overflow-hidden transition-all duration-300 ease-in-out`}
+        >
+          <div className="py-4 space-y-4">
+            {navLinks.map((link) => (
+              <Link
+                key={link.href}
+                href={link.href}
+                onClick={handleLinkClick}
+                className="block text-gray-700 hover:text-blue-600 transition-colors font-medium py-2"
+              >
+                {link.label}
+              </Link>
+            ))}
+          </div>
         </div>
       </div>
     </nav>
