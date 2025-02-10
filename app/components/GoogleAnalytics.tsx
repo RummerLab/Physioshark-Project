@@ -5,9 +5,11 @@ import Script from 'next/script';
 import { useEffect, Suspense } from 'react';
 
 // Define pageview function
-const pageview = (GA_MEASUREMENT_ID: string) => {
+const pageview = (GA_MEASUREMENT_ID: string, url: string) => {
   window.gtag('config', GA_MEASUREMENT_ID, {
-    page_path: window.location.pathname,
+    page_path: url,
+    transport_type: 'beacon',
+    debug_mode: process.env.NODE_ENV === 'development',
   });
 };
 
@@ -16,10 +18,10 @@ function GoogleAnalyticsContent({ GA_MEASUREMENT_ID }: { GA_MEASUREMENT_ID: stri
   const searchParams = useSearchParams();
 
   useEffect(() => {
-    const url = pathname + searchParams.toString();
-    
-    // Send pageview with the new url
-    pageview(GA_MEASUREMENT_ID);
+    if (pathname) {
+      const url = pathname + searchParams.toString();
+      pageview(GA_MEASUREMENT_ID, url);
+    }
   }, [pathname, searchParams, GA_MEASUREMENT_ID]);
 
   return (
@@ -36,13 +38,16 @@ function GoogleAnalyticsContent({ GA_MEASUREMENT_ID }: { GA_MEASUREMENT_ID: stri
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
+            gtag('consent', 'default', {
+              'analytics_storage': 'granted'
+            });
             gtag('config', '${GA_MEASUREMENT_ID}', {
               page_path: window.location.pathname,
-              transport_url: 'https://physioshark.org',
-              first_party_collection: true,
+              transport_type: 'beacon',
               anonymize_ip: true,
               allow_google_signals: false,
-              allow_ad_personalization_signals: false
+              allow_ad_personalization_signals: false,
+              debug_mode: ${process.env.NODE_ENV === 'development'}
             });
           `,
         }}
