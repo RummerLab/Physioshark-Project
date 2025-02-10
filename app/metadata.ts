@@ -13,6 +13,18 @@ export const siteMetadata = {
     instagram: 'https://instagram.com/physioshark',
     youtube: 'https://youtube.com/@physioshark',
   },
+  icons: {
+    icon: '/icon.png',
+    shortcut: '/favicon.ico',
+    apple: '/apple-icon.png',
+    other: [
+      {
+        rel: 'mask-icon',
+        url: '/favicon.svg',
+      },
+    ],
+  },
+  manifest: '/site.webmanifest',
   keywords: [
     'shark research',
     'marine biology',
