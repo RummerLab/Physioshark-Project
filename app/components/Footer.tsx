@@ -130,18 +130,15 @@ export default function Footer() {
             href="https://rummerlab.com"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-gray-400 hover:opacity-80"
+            className="text-gray-400 group transition-colors duration-200"
             aria-label="Rummer Lab"
             title="Visit Rummer Lab website"
           >
-            <div className="relative w-5 h-5">
-              <Image
-                src="https://rummerlab.com/favicon.ico"
+            <div className="w-5 h-5">
+              <img
+                src="https://rummerlab.com/RummerLab_icon.svg"
                 alt="Rummer Lab Logo"
-                fill
-                className="object-contain"
-                sizes="20px"
-                unoptimized
+                className="w-full h-full [filter:brightness(0)_saturate(100%)_invert(70%)] group-hover:[filter:brightness(0)_saturate(100%)_invert(100%)] transition-[filter] duration-200"
               />
             </div>
           </a>
