@@ -93,14 +93,14 @@ export default function Footer() {
         </div>
 
         {/* Social Links */}
-        <div className="flex justify-center gap-6 mt-12">
+        <div className="flex justify-center items-center gap-8 mt-12">
           {socialLinks.map((social) => (
             <a
               key={social.name}
               href={social.url}
               target="_blank"
               rel="noopener"
-              className="text-gray-400 hover:text-white transition-colors duration-200"
+              className="text-gray-400 hover:text-white transform hover:scale-110 transition-all duration-200 ease-in-out"
               aria-label={`Follow us on ${social.name}`}
               title={`Visit our ${social.name} profile`}
             >
@@ -111,17 +111,17 @@ export default function Footer() {
             href="https://jodierummer.com"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-gray-400 hover:opacity-80"
+            className="text-gray-400 transform hover:scale-110 transition-all duration-200 ease-in-out"
             aria-label="Jodie Rummer's Website"
             title="Visit Jodie Rummer's website"
           >
-            <div className="relative w-5 h-5">
+            <div className="w-5 h-5">
               <Image
-                src="https://jodierummer.com/favicon.png"
+                src="https://jodierummer.com/shark-fin-in-the-ocean.svg"
                 alt="Jodie Rummer Logo"
-                fill
-                className="object-contain"
-                sizes="20px"
+                width={20}
+                height={20}
+                className="w-full h-full [filter:invert(70%)] hover:[filter:invert(100%)] transition-all duration-200"
                 unoptimized
               />
             </div>
@@ -130,7 +130,7 @@ export default function Footer() {
             href="https://rummerlab.com"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-gray-400 group transition-colors duration-200"
+            className="text-gray-400 transform hover:scale-110 transition-all duration-200 ease-in-out"
             aria-label="Rummer Lab"
             title="Visit Rummer Lab website"
           >
@@ -140,7 +140,7 @@ export default function Footer() {
                 alt="Rummer Lab Logo"
                 width={20}
                 height={20}
-                className="w-full h-full [filter:brightness(0)_saturate(100%)_invert(70%)] group-hover:[filter:brightness(0)_saturate(100%)_invert(100%)] transition-[filter] duration-200"
+                className="w-full h-full [filter:brightness(0)_saturate(100%)_invert(70%)] hover:[filter:brightness(0)_saturate(100%)_invert(100%)] transition-all duration-200"
               />
             </div>
           </a>
