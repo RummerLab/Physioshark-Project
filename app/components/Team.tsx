@@ -1,182 +1,27 @@
 import Image from 'next/image'
 import { notFound } from 'next/navigation'
-
-interface TeamMember {
-  name: string;
-  title?: string;
-  role: string;
-  email?: string;
-  startDate?: string;
-  endDate?: string;
-  description: string;
-  image: string;
-  alt: string;
-  links?: {
-    personalWebsite?: string;
-    labWebsite?: string;
-    projectWebsite?: string;
-    researchGateSlug?: string;
-    googleScholarId?: string;
-    x?: string;
-    bluesky?: string;
-    facebook?: string;
-    instagram?: string;
-    linkedin?: string;
-    github?: string;
-    orcid?: string;
-  };
-  affiliations?: Array<{
-    institution: string;
-    department?: string;
-    role: string;
-    location?: string;
-  }>;
-}
-
-function Description({ content }: { content: string }) {
-  const paragraphs = content.split('\n\n');
-  return (
-    <div className="prose prose-sm max-w-none text-gray-600">
-      {paragraphs.map((paragraph, i) => (
-        <p key={i} className="mb-4" dangerouslySetInnerHTML={{ __html: paragraph }} />
-      ))}
-    </div>
-  );
-}
-
-function TeamMemberLinks({ links }: { links: TeamMember['links'] }) {
-  if (!links || Object.keys(links).length === 0) return null;
-
-  return (
-    <div className="mt-4 flex flex-wrap gap-4">
-      {links.personalWebsite && (
-        <a 
-          href={links.personalWebsite.startsWith('http') ? links.personalWebsite : `https://${links.personalWebsite}`}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="text-blue-600 hover:text-blue-800"
-        >
-          Personal Website
-        </a>
-      )}
-      {links.labWebsite && (
-        <a 
-          href={links.labWebsite.startsWith('http') ? links.labWebsite : `https://${links.labWebsite}`}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="text-blue-600 hover:text-blue-800"
-        >
-          Lab Website
-        </a>
-      )}
-      {links.projectWebsite && links.projectWebsite !== "physioshark.org" && (
-        <a 
-          href={links.projectWebsite.startsWith('http') ? links.projectWebsite : `https://${links.projectWebsite}`}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="text-blue-600 hover:text-blue-800"
-        >
-          Project Website
-        </a>
-      )}
-      {/* Social Media Links */}
-      {links.bluesky && (
-        <a 
-          href={links.bluesky.startsWith('http') ? links.bluesky : `https://bsky.app/profile/${links.bluesky.replace('@', '')}`}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="text-blue-600 hover:text-blue-800 capitalize"
-        >
-          Bluesky
-        </a>
-      )}
-      {/* Other social media links */}
-      {[
-        { key: 'facebook', prefix: 'https://www.facebook.com/' },
-        { key: 'instagram', prefix: 'https://www.instagram.com/' },
-        { key: 'linkedin', prefix: 'https://www.linkedin.com/in/' },
-        { key: 'github', prefix: 'https://github.com/' }
-      ].map(({ key, prefix }) => 
-        links[key as keyof typeof links] ? (
-          <a
-            key={key}
-            href={links[key as keyof typeof links]!.startsWith('http') 
-              ? links[key as keyof typeof links]! 
-              : `${prefix}${links[key as keyof typeof links]}`}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-blue-600 hover:text-blue-800 capitalize"
-          >
-            {key}
-          </a>
-        ) : null
-      )}
-    </div>
-  );
-}
-
-function Affiliations({ affiliations }: { affiliations: TeamMember['affiliations'] }) {
-  if (!affiliations?.length) return null;
-
-  return (
-    <div className="mt-4">
-      <h4 className="font-semibold text-gray-700 mb-2">Affiliations</h4>
-      <ul className="space-y-2">
-        {affiliations.map((affiliation, index) => (
-          <li key={index} className="text-sm text-gray-600">
-            {affiliation.role} at {affiliation.institution}
-            {affiliation.department && `, ${affiliation.department}`}
-            {affiliation.location && ` (${affiliation.location})`}
-          </li>
-        ))}
-      </ul>
-    </div>
-  );
-}
-
-function TeamMemberCard({ member, index, totalInRow }: { 
-  member: TeamMember; 
-  index: number;
-  totalInRow: number;
-}) {
-  return (
-    <div 
-      key={index}
-      className="bg-white rounded-lg shadow-lg overflow-hidden"
-    >
-      <div className="relative h-72">
-        <Image
-          src={member.image}
-          alt={member.alt}
-          fill
-          className="object-cover"
-          sizes={`(max-width: 768px) 100vw, ${100 / totalInRow}vw`}
-        />
-      </div>
-      <div className="p-6">
-        <h3 className="text-xl font-bold mb-2">{member.name}</h3>
-        {member.title && (
-          <p className="text-gray-600 mb-1">{member.title}</p>
-        )}
-        <p className="text-blue-600 font-medium mb-4">{member.role}</p>
-        <Description content={member.description} />
-        <TeamMemberLinks links={member.links} />
-        <Affiliations affiliations={member.affiliations} />
-      </div>
-    </div>
-  );
-}
+import TeamMemberCard from './TeamMemberCard'
+import type { TeamMember } from '@/types/team'
 
 async function getTeamMembers(): Promise<TeamMember[]> {
   try {
-    const response = await fetch('https://rummerlab.com/api/scholar/team', {
+    const response = await fetch('https://rummerlab.com/api/scholar/ynWS968AAAAJ/team', {
       next: { 
         revalidate: 86400, // Revalidate daily (24 hours = 86400 seconds)
         tags: ['team']
-      }
+      },
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json',
+      },
     });
 
     if (!response.ok) {
+      console.error('Response status:', response.status);
+      console.error('Response status text:', response.statusText);
+      const text = await response.text();
+      console.error('Response body:', text);
+      
       if (response.status === 404) {
         notFound();
       }
@@ -186,10 +31,18 @@ async function getTeamMembers(): Promise<TeamMember[]> {
     const data = await response.json();
     
     if (!Array.isArray(data) || data.length === 0) {
+      console.error('Invalid data format or empty array received:', data);
       notFound();
     }
 
-    return data;
+    return data.map(member => ({
+      ...member,
+      name: member.name || 'Unknown Member',
+      role: member.role || 'Role Not Available',
+      description: member.description || '',
+      alt: member.alt || `${member.name || 'Team member'}'s profile picture`,
+      image: member.image?.trim() || '/images/partner-rummer-lab-logo.png'
+    }));
   } catch (error) {
     console.error('Error fetching team data:', error);
     throw error;

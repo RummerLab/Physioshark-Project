@@ -135,9 +135,11 @@ export default function Footer() {
             title="Visit Rummer Lab website"
           >
             <div className="w-5 h-5">
-              <img
+              <Image
                 src="https://rummerlab.com/RummerLab_icon.svg"
                 alt="Rummer Lab Logo"
+                width={20}
+                height={20}
                 className="w-full h-full [filter:brightness(0)_saturate(100%)_invert(70%)] group-hover:[filter:brightness(0)_saturate(100%)_invert(100%)] transition-[filter] duration-200"
               />
             </div>

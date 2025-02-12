@@ -9,8 +9,11 @@ interface Window {
       anonymize_ip?: boolean;
       allow_google_signals?: boolean;
       allow_ad_personalization_signals?: boolean;
-      [key: string]: any;
+      [key: string]: string | number | boolean | undefined;
     }
   ) => void;
-  dataLayer: any[];
+  dataLayer: Array<{
+    event?: string;
+    [key: string]: string | number | boolean | undefined;
+  }>;
 } 

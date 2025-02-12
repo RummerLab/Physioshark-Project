@@ -35,15 +35,15 @@ export default function Mission() {
             </p>
             
             <p>
-              While French Polynesia is a protected shark sanctuary, there is a need to address the sharks' 
+              While French Polynesia is a protected shark sanctuary, there is a need to address the sharks&apos; 
               physiological tolerance to the environmental conditions of their nurseries that will likely 
               become more severe as climate change progresses. Decreases in physiological performance may 
               translate to decreases in fitness.
             </p>
 
             <h3 className="text-xl italic text-gray-800">
-              What can we learn from these sharks – sharks that are protected in the largest shark sanctuary 
-              in the world – that can be applied not only locally, but also on a global scale?
+              What can we learn from these sharks &ndash; sharks that are protected in the largest shark sanctuary 
+              in the world &ndash; that can be applied not only locally, but also on a global scale?
             </h3>
           </div>
 
