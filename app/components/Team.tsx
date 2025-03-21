@@ -35,7 +35,8 @@ async function getTeamMembers(): Promise<TeamMember[]> {
       notFound();
     }
 
-    return data.map(member => ({
+    // Process team members and filter for those with 'shark' in their description
+    const processedMembers = data.map(member => ({
       ...member,
       name: member.name || 'Unknown Member',
       role: member.role || 'Role Not Available',
@@ -43,6 +44,13 @@ async function getTeamMembers(): Promise<TeamMember[]> {
       alt: member.alt || `${member.name || 'Team member'}'s profile picture`,
       image: member.image?.trim() || '/images/partner-rummer-lab-logo.png'
     }));
+    
+    // Filter to only include members with 'shark' in their description (case insensitive)
+    const filteredMembers = processedMembers.filter(member => 
+      member.description.toLowerCase().includes('shark')
+    );
+    
+    return filteredMembers;
   } catch (error) {
     console.error('Error fetching team data:', error);
     throw error;
