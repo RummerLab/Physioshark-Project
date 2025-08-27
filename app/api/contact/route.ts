@@ -4,8 +4,19 @@ import { Resend } from 'resend'
 // Initialize Resend with API key
 const resend = new Resend(process.env.RESEND_API_KEY)
 
-// Email validation regex
-const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
+// Secure email validation function
+function isValidEmail(email: string): boolean {
+  // Limit input length to prevent ReDoS attacks
+  if (email.length > 254) {
+    return false
+  }
+
+  // Basic email format validation with safer regex
+  // This regex is more restrictive and less prone to ReDoS
+  const emailRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/
+
+  return emailRegex.test(email)
+}
 
 export async function POST(request: Request) {
   try {
@@ -20,8 +31,8 @@ export async function POST(request: Request) {
       )
     }
 
-    // Validate email format
-    if (!emailRegex.test(email)) {
+    // Validate email format using secure function
+    if (!isValidEmail(email)) {
       return NextResponse.json(
         { error: 'Invalid email address' },
         { status: 400 }
