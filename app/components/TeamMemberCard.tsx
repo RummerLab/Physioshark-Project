@@ -1,13 +1,43 @@
+'use client';
+
 import Image from 'next/image';
+import { useState } from 'react';
 import { TeamMember } from '@/types/team';
 
 function Description({ content }: { content: string }) {
+  const [isExpanded, setIsExpanded] = useState(false);
   const paragraphs = content.split('\n\n');
+  
+  // Check if content is long enough to warrant a "Read More" button
+  const isLongContent = content.length > 200;
+  
+  // Get truncated content for collapsed state
+  const getTruncatedContent = () => {
+    if (content.length <= 200) return content;
+    
+    // Find a good breaking point near 200 characters
+    const truncated = content.substring(0, 200);
+    const lastSpace = truncated.lastIndexOf(' ');
+    return lastSpace > 150 ? truncated.substring(0, lastSpace) + '...' : truncated + '...';
+  };
+
+  const displayContent = isExpanded ? content : getTruncatedContent();
+  const displayParagraphs = displayContent.split('\n\n');
+
   return (
     <div className="prose prose-sm max-w-none text-gray-600">
-      {paragraphs.map((paragraph, i) => (
+      {displayParagraphs.map((paragraph, i) => (
         <p key={i} className="mb-4" dangerouslySetInnerHTML={{ __html: paragraph }} />
       ))}
+      
+      {isLongContent && (
+        <button
+          onClick={() => setIsExpanded(!isExpanded)}
+          className="text-blue-600 hover:text-blue-800 font-medium text-xs transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 rounded italic"
+        >
+          {isExpanded ? 'Read Less' : 'Read More'}
+        </button>
+      )}
     </div>
   );
 }
