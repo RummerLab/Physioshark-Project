@@ -1,4 +1,3 @@
-import Image from 'next/image'
 import Link from 'next/link'
 
 export default function Hero() {
@@ -6,17 +5,16 @@ export default function Hero() {
     <section className="relative h-screen flex items-center justify-center">
       {/* Background image */}
       <div className="absolute inset-0 z-0">
-        <Image
-          src="/images/hero-blacktip-reef-shark-moorea-research.jpg"
-          alt="Blacktip reef sharks swimming in the crystal clear waters of Moorea lagoon"
-          fill
-          priority
-          className="object-cover"
-          quality={100}
-          sizes="100vw"
+        <div
+          aria-hidden="true"
+          className="absolute inset-0 bg-cover bg-center"
+          style={{ backgroundImage: "url('/images/hero-blacktip-reef-shark-moorea-research.jpg')" }}
         />
         <div className="absolute inset-0 bg-black/40" />
       </div>
+      <span className="sr-only">
+        Blacktip reef sharks swimming in the crystal clear waters of Moorea lagoon
+      </span>
 
       {/* Content */}
       <div className="container mx-auto px-4 relative z-10">

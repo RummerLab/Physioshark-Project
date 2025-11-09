@@ -42,15 +42,14 @@ If you have any questions about our project or how you can support us in our res
       {/* Hero Section */}
       <section className="relative h-[60vh] flex items-center">
         <div className="absolute inset-0">
-          <Image
-            src="/images/shark-nursery-habitat-moorea-lagoon.jpg"
-            alt="Shark physiology research in Moorea"
-            fill
-            className="object-cover"
-            sizes="100vw"
+          <div
+            aria-hidden="true"
+            className="absolute inset-0 bg-cover bg-center"
+            style={{ backgroundImage: "url('/images/shark-nursery-habitat-moorea-lagoon.jpg')" }}
           />
           <div className="absolute inset-0 bg-gradient-to-r from-black/50 to-black/30" />
         </div>
+        <span className="sr-only">Shark physiology research in Moorea</span>
         <div className="container mx-auto px-4 relative z-10">
           <h1 className="text-6xl md:text-8xl font-bold text-white text-center uppercase tracking-wide">
             Our Projects
@@ -74,7 +73,7 @@ If you have any questions about our project or how you can support us in our res
                       alt={project.alt}
                       fill
                       className="object-cover"
-                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                      sizes="(min-width: 1280px) 33vw, (min-width: 768px) 45vw, 90vw"
                       priority={index === 0}
                     />
                   </div>
