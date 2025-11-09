@@ -28,12 +28,14 @@ export default function Navbar() {
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-24">
           {/* Logo */}
-          <Link href="/" className="relative h-16 w-80">
+          <Link href="/" className="flex h-16 items-center">
             <Image
               src="/images/logo-physioshark-project.png"
               alt="Physioshark Project Logo"
-              fill
-              className="object-contain"
+              width={256}
+              height={64}
+              className="h-full w-auto object-contain"
+              sizes="160px"
               priority
             />
           </Link>

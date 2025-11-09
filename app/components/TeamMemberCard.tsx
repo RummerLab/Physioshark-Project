@@ -106,6 +106,10 @@ export default function TeamMemberCard({
   index: number;
   totalInRow: number;
 }) {
+  const desktopWidth = totalInRow >= 4 ? '25vw' : '30vw';
+  const tabletWidth = totalInRow >= 4 ? '45vw' : '60vw';
+  const imageSizes = `(min-width: 1280px) ${desktopWidth}, (min-width: 768px) ${tabletWidth}, 90vw`;
+
   return (
     <div 
       key={index}
@@ -117,7 +121,7 @@ export default function TeamMemberCard({
           alt={member.alt || `${member.name}'s profile picture`}
           fill
           className="object-cover"
-          sizes={`(max-width: 768px) 100vw, ${100 / totalInRow}vw`}
+          sizes={imageSizes}
         />
       </div>
       <div className="p-6">

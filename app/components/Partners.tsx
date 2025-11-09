@@ -85,13 +85,14 @@ export default function Partners() {
                 rel="noopener" 
                 className="flex items-center justify-center p-8 bg-white rounded-lg shadow-lg hover:shadow-xl transition-shadow"
               >
-                <div className="relative w-full h-24">
+                <div className="flex h-24 w-full items-center justify-center">
                   <Image
                     src={partner.logo}
                     alt={partner.alt}
-                    fill
-                    className="object-contain"
-                    sizes="(max-width: 768px) 50vw, (max-width: 1200px) 33vw, 25vw"
+                    width={200}
+                    height={96}
+                    className="h-full w-auto object-contain"
+                    sizes="(min-width: 1280px) 200px, (min-width: 768px) 25vw, 40vw"
                   />
                 </div>
               </a>

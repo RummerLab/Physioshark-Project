@@ -1,4 +1,3 @@
-import Image from 'next/image'
 import { notFound } from 'next/navigation'
 import TeamMemberCard from './TeamMemberCard'
 import type { TeamMember } from '@/types/team'
@@ -64,15 +63,15 @@ export default async function Team() {
     <section id="team" className="bg-white">
       {/* Hero Header */}
       <div className="relative h-[40vh]">
-        <Image
-          src="/images/shark-physiology-research-moorea.jpg"
-          alt="Shark research team conducting field work in Moorea"
-          fill
-          className="object-cover"
-          sizes="100vw"
-          priority
+        <div
+          aria-hidden="true"
+          className="absolute inset-0 bg-cover bg-center"
+          style={{ backgroundImage: "url('/images/shark-physiology-research-moorea.jpg')" }}
         />
         <div className="absolute inset-0 bg-black/40" />
+        <span className="sr-only">
+          Shark research team conducting field work in Moorea
+        </span>
         <div className="absolute inset-0 flex items-center justify-center">
           <h1 className="text-5xl md:text-7xl font-bold text-white uppercase tracking-wide">
             Our Team
