@@ -121,7 +121,7 @@ export default function Footer() {
                 alt="Jodie Rummer Logo"
                 width={20}
                 height={20}
-                className="w-full h-full [filter:invert(70%)] hover:[filter:invert(100%)] transition-all duration-200"
+                className="w-full h-full filter-[invert(70%)] hover:filter-[invert(100%)] transition-all duration-200"
                 unoptimized
               />
             </div>
@@ -140,7 +140,7 @@ export default function Footer() {
                 alt="Rummer Lab Logo"
                 width={20}
                 height={20}
-                className="w-full h-full [filter:brightness(0)_saturate(100%)_invert(70%)] hover:[filter:brightness(0)_saturate(100%)_invert(100%)] transition-all duration-200"
+                className="w-full h-full filter-[brightness(0)_saturate(100%)_invert(70%)] hover:filter-[brightness(0)_saturate(100%)_invert(100%)] transition-all duration-200"
               />
             </div>
           </a>

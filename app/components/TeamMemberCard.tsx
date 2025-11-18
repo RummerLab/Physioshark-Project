@@ -33,7 +33,7 @@ function Description({ content }: { content: string }) {
       {isLongContent && (
         <button
           onClick={() => setIsExpanded(!isExpanded)}
-          className="text-blue-600 hover:text-blue-800 font-medium text-xs transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 rounded italic"
+          className="text-blue-600 hover:text-blue-800 font-medium text-xs transition-colors duration-200 focus:outline-hidden focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 rounded-sm italic"
         >
           {isExpanded ? 'Read Less' : 'Read More'}
         </button>

@@ -47,7 +47,7 @@ If you have any questions about our project or how you can support us in our res
             className="absolute inset-0 bg-cover bg-center"
             style={{ backgroundImage: "url('/images/shark-nursery-habitat-moorea-lagoon.jpg')" }}
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-black/50 to-black/30" />
+          <div className="absolute inset-0 bg-linear-to-r from-black/50 to-black/30" />
         </div>
         <span className="sr-only">Shark physiology research in Moorea</span>
         <div className="container mx-auto px-4 relative z-10">
@@ -67,7 +67,7 @@ If you have any questions about our project or how you can support us in our res
                 className={`flex flex-col ${project.position === 'right' ? 'md:flex-row-reverse' : 'md:flex-row'} gap-8 items-center`}
               >
                 <div className="flex-1 w-full">
-                  <div className="relative w-full aspect-[4/3] rounded-lg overflow-hidden shadow-lg">
+                  <div className="relative w-full aspect-4/3 rounded-lg overflow-hidden shadow-lg">
                     <Image
                       src={project.image}
                       alt={project.alt}
