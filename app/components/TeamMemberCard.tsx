@@ -6,7 +6,6 @@ import { TeamMember } from '@/types/team';
 
 function Description({ content }: { content: string }) {
   const [isExpanded, setIsExpanded] = useState(false);
-  const paragraphs = content.split('\n\n');
   
   // Check if content is long enough to warrant a "Read More" button
   const isLongContent = content.length > 200;
