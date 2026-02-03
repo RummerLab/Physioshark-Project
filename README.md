@@ -13,7 +13,7 @@ The Physioshark Project, led by Dr. Jodie Rummer, combines ecology, evolution, a
 
 ## Website Features
 
-- Modern, responsive design built with Next.js 15 and React 19
+- Modern, responsive design built with Next.js and React
 - Server-side rendering for optimal performance
 - Interactive team member profiles
 - Research project showcases
@@ -22,8 +22,8 @@ The Physioshark Project, led by Dr. Jodie Rummer, combines ecology, evolution, a
 
 ## Technology Stack
 
-- **Framework**: Next.js 15 (App Router)
-- **Frontend**: React 19, TypeScript
+- **Framework**: Next.js (App Router)
+- **Frontend**: React, TypeScript
 - **Styling**: Tailwind CSS
 - **UI Components**: Custom components with modern design principles
 - **Images**: Optimized with Next.js Image component
