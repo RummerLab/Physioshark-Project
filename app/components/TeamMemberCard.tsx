@@ -3,6 +3,16 @@
 import Image from 'next/image';
 import { useState } from 'react';
 import { TeamMember } from '@/types/team';
+import DOMPurify from 'dompurify';
+
+function sanitizeHtml(html: string | null | undefined) {
+  return html
+    ? DOMPurify.sanitize(html, {
+        ALLOWED_TAGS: ['span', 'p'],
+        ALLOWED_ATTR: ['class'],
+      })
+    : '';
+}
 
 function Description({ content }: { content: string }) {
   const [isExpanded, setIsExpanded] = useState(false);
@@ -26,7 +36,7 @@ function Description({ content }: { content: string }) {
   return (
     <div className="prose prose-sm max-w-none text-gray-600">
       {displayParagraphs.map((paragraph, i) => (
-        <p key={i} className="mb-4" dangerouslySetInnerHTML={{ __html: paragraph }} />
+        <p key={i} className="mb-4" dangerouslySetInnerHTML={{ __html: sanitizeHtml(paragraph) }} />
       ))}
       
       {isLongContent && (
