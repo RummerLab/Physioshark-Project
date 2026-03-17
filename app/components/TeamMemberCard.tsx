@@ -3,7 +3,7 @@
 import Image from 'next/image';
 import { useState } from 'react';
 import { TeamMember } from '@/types/team';
-import DOMPurify from 'dompurify';
+import DOMPurify from 'isomorphic-dompurify';
 
 function sanitizeHtml(html: string | null | undefined) {
   return html
