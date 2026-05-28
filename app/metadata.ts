@@ -9,7 +9,7 @@ export const siteMetadata = {
     logo: 'https://physioshark.org/images/logo-physioshark-project.png',
   },
   socialLinks: {
-    twitter: 'https://x.com/physioshark',
+    twitter: 'https://x.com/physiologyfish',
     instagram: 'https://www.instagram.com/physioshark',
     youtube: 'https://www.youtube.com/@physioshark',
   },
