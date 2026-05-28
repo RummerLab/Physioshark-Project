@@ -55,7 +55,7 @@ export default function Partners() {
       name: "Rummer Lab",
       logo: "/images/partner-rummer-lab-logo.png",
       alt: "Rummer Lab logo",
-      website: "https://www.rummerlab.com"
+      website: "https://rummerlab.com"
     },
     {
       name: "Passions of Paradise",
