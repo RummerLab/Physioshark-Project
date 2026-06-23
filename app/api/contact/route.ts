@@ -1,5 +1,7 @@
 import { NextResponse } from 'next/server'
 import { Resend } from 'resend'
+import { escapeHtml } from '@/lib/escape-html'
+import { getClientIp, isRateLimited } from '@/lib/rate-limit'
 
 // Initialize Resend with API key
 const resend = new Resend(process.env.RESEND_API_KEY)
@@ -20,6 +22,14 @@ function isValidEmail(email: string): boolean {
 
 export async function POST(request: Request) {
   try {
+    const clientIp = getClientIp(request)
+    if (isRateLimited(clientIp)) {
+      return NextResponse.json(
+        { error: 'Too many requests. Please try again later.' },
+        { status: 429 }
+      )
+    }
+
     // Get form data
     const { name, email, subject, message } = await request.json()
 
@@ -39,6 +49,11 @@ export async function POST(request: Request) {
       )
     }
 
+    const safeName = escapeHtml(name)
+    const safeEmail = escapeHtml(email)
+    const safeSubject = escapeHtml(subject)
+    const safeMessage = escapeHtml(message).replace(/\n/g, '<br>')
+
     // Send email using Resend
     await resend.emails.send({
       from: 'Physioshark Contact Form <hello@physioshark.org>',
@@ -47,11 +62,11 @@ export async function POST(request: Request) {
       subject: `[Website Contact] ${subject}`,
       html: `
         <h2>New Contact Form Submission</h2>
-        <p><strong>Name:</strong> ${name}</p>
-        <p><strong>Email:</strong> ${email}</p>
-        <p><strong>Subject:</strong> ${subject}</p>
+        <p><strong>Name:</strong> ${safeName}</p>
+        <p><strong>Email:</strong> ${safeEmail}</p>
+        <p><strong>Subject:</strong> ${safeSubject}</p>
         <p><strong>Message:</strong></p>
-        <p>${message.replace(/\n/g, '<br>')}</p>
+        <p>${safeMessage}</p>
       `,
     })
 
