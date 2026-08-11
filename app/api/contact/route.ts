@@ -3,9 +3,6 @@ import { Resend } from 'resend'
 import { escapeHtml } from '@/lib/escape-html'
 import { getClientIp, isRateLimited } from '@/lib/rate-limit'
 
-// Initialize Resend with API key
-const resend = new Resend(process.env.RESEND_API_KEY)
-
 // Secure email validation function
 function isValidEmail(email: string): boolean {
   // Limit input length to prevent ReDoS attacks
@@ -53,6 +50,16 @@ export async function POST(request: Request) {
     const safeEmail = escapeHtml(email)
     const safeSubject = escapeHtml(subject)
     const safeMessage = escapeHtml(message).replace(/\n/g, '<br>')
+
+    if (!process.env.RESEND_API_KEY) {
+      console.error('RESEND_API_KEY is not configured')
+      return NextResponse.json(
+        { error: 'Failed to send message' },
+        { status: 500 }
+      )
+    }
+
+    const resend = new Resend(process.env.RESEND_API_KEY)
 
     // Send email using Resend
     await resend.emails.send({
