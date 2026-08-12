@@ -40,6 +40,7 @@
   "overrides": {
     "@types/react": "19.2.18",
     "@types/react-dom": "19.2.4",
+    "dompurify": "^3.4.13",
     "postcss": "^8.5.26"
   }
 }
