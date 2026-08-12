@@ -26,7 +26,7 @@ export default function Mission() {
             </p>
             
             <p>
-              The fieldwork is now based on Mo&apos;orea (Island) in French Polynesia, in collaboration with{' '}
+              The fieldwork is now based on Mo&apos;orea, French Polynesia, in collaboration with{' '}
               <a
                 href="https://www.science4reefs-cnrs.com/"
                 target="_blank"
