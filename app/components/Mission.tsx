@@ -26,7 +26,16 @@ export default function Mission() {
             </p>
             
             <p>
-              The fieldwork is based at the CRIOBE Research Center on Moorea, French Polynesia. The project 
+              The fieldwork is now based on Mo&apos;orea (Island) in French Polynesia, in collaboration with{' '}
+              <a
+                href="https://www.science4reefs-cnrs.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-blue-600 hover:text-blue-800 underline"
+              >
+                science4reefs
+              </a>
+              . The project 
               investigates the physiological energetics (i.e., costs/benefits) of newborn blacktip reef and 
               sicklefin lemon sharks living in the 11 potential nursery areas identified around the island. 
               For instance, the research team is investigating how well newborn sharks cope with hot water 
