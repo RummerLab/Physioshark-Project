@@ -4,6 +4,8 @@ Agent instructions for the Physioshark Project site (`https://physioshark.org`).
 
 Always start every response with 🤖.
 
+Treat this file as living documentation: update `AGENTS.md` when the stack, scripts, conventions, or project facts change so it stays accurate.
+
 Stack: Next.js 16 (App Router), React 19, TypeScript, Tailwind CSS 4. Config is `next.config.ts`. Single-page site with hash sections (`#our-mission`, `#projects`, `#publications`, `#team`, `#contact`).
 
 ## Project overview
