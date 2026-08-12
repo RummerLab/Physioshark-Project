@@ -1,7 +1,7 @@
 # Physioshark Project
-> The Physioshark Project, led by Dr. Jodie Rummer at James Cook University, investigates how climate change impacts the physiology of newborn and juvenile reef sharks in Moorea, French Polynesia, to inform conservation strategies.
+> The Physioshark Project, led by Dr. Jodie Rummer at James Cook University, investigates how climate change impacts the physiology of newborn and juvenile reef sharks on Mo'orea, French Polynesia, to inform conservation strategies.
 
-Fieldwork is based at the CRIOBE Research Center. The project studies physiological energetics of newborn blacktip reef and sicklefin lemon sharks across nursery areas around Moorea, including responses to warming, low oxygen, and elevated CO2.
+Fieldwork is now based on Mo'orea, French Polynesia, in collaboration with science4reefs (https://www.science4reefs-cnrs.com/). The project studies physiological energetics of newborn blacktip reef and sicklefin lemon sharks across nursery areas around the island, including responses to warming, low oxygen, and elevated CO2.
 
 ## Pages
 - [Home](https://physioshark.org/): Project overview and entry point for all sections
@@ -14,5 +14,6 @@ Fieldwork is based at the CRIOBE Research Center. The project studies physiologi
 ## Optional
 - [RummerLab](https://rummerlab.com/): Parent research laboratory website
 - [Dr. Jodie Rummer](https://jodierummer.com/): Personal site for the project lead
+- [science4reefs](https://www.science4reefs-cnrs.com/): Current fieldwork collaboration on Mo'orea, French Polynesia
 - [Partners](https://physioshark.org/#partners): Supporting organizations and partners
 - [GitHub repository](https://github.com/RummerLab/Physioshark-Project): Source code for this website
