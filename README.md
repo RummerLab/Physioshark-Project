@@ -82,7 +82,7 @@ To learn more about the Physioshark Project and our research:
 
 - Visit our website: [physioshark.org](https://physioshark.org)
 - Follow Dr. Jodie Rummer: [jodierummer.com](https://jodierummer.com)
-- Visit the Rummer Lab: [rummerlab.com](https://rummerlab.com)
+- Visit the RummerLab: [rummerlab.com](https://rummerlab.com)
 
 ## Deploy on Vercel
 

@@ -52,9 +52,9 @@ export default function Partners() {
       website: "https://www.coralcoe.org.au"
     },
     {
-      name: "Rummer Lab",
+      name: "RummerLab",
       logo: "/images/partner-rummer-lab-logo.png",
-      alt: "Rummer Lab logo",
+      alt: "RummerLab logo",
       website: "https://rummerlab.com"
     },
     {

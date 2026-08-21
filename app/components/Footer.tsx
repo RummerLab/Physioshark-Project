@@ -17,7 +17,7 @@ export default function Footer() {
       ),
     },
     {
-      name: "Instagram (Rummer Lab)",
+      name: "Instagram (RummerLab)",
       url: "https://www.instagram.com/rummerlab/",
       icon: (
         <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
@@ -127,17 +127,36 @@ export default function Footer() {
             </div>
           </a>
           <a
+            href="https://fenuafindex.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-gray-400 transform hover:scale-110 transition-all duration-200 ease-in-out"
+            aria-label="Fenua FINdex"
+            title="Visit Fenua FINdex"
+          >
+            <div className="w-5 h-5">
+              <Image
+                src="https://fenuafindex.com/FenuaFINdex_icon.svg"
+                alt="Fenua FINdex Logo"
+                width={20}
+                height={20}
+                className="w-full h-full filter-[brightness(0)_saturate(100%)_invert(70%)] hover:filter-[brightness(0)_saturate(100%)_invert(100%)] transition-all duration-200"
+                unoptimized
+              />
+            </div>
+          </a>
+          <a
             href="https://rummerlab.com"
             target="_blank"
             rel="noopener noreferrer"
             className="text-gray-400 transform hover:scale-110 transition-all duration-200 ease-in-out"
-            aria-label="Rummer Lab"
-            title="Visit Rummer Lab website"
+            aria-label="RummerLab"
+            title="Visit RummerLab website"
           >
             <div className="w-5 h-5">
               <Image
                 src="https://rummerlab.com/RummerLab_icon.svg"
-                alt="Rummer Lab Logo"
+                alt="RummerLab Logo"
                 width={20}
                 height={20}
                 className="w-full h-full filter-[brightness(0)_saturate(100%)_invert(70%)] hover:filter-[brightness(0)_saturate(100%)_invert(100%)] transition-all duration-200"
